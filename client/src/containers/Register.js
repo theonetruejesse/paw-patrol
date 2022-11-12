@@ -18,15 +18,10 @@ function Register() {
             username: "",
             email: "",
             password: "",
-            confirmPassword: "",
           }} // bruh
           onSubmit={async (values, { setErrors }) => {
-            if (values.password !== values.confirmPassword) {
-              return setErrors("Passwords do not match");
-            }
-
             try {
-              await createUser(values.username);
+              // await createUser(values.username);
               await signup(values.email, values.password);
               // todo -> add username
               history.push("/");
@@ -37,27 +32,15 @@ function Register() {
         >
           {({ isSubmitting }) => (
             <Form>
-              <InputField
-                name="username"
-                placeholder="username"
-                label="Username"
-              />
+              <InputField name="email" placeholder="email" label="Email" />
               <Box mt={3}>
-                <InputField name="email" placeholder="email" label="Email" />
+                <InputField name="phone" placeholder="phone" label="Phone" />
               </Box>
               <Box mt={3}>
                 <InputField
                   name="password"
                   placeholder="password"
                   label="Password"
-                  type="password"
-                />
-              </Box>
-              <Box mt={3}>
-                <InputField
-                  name="confirmPassword"
-                  placeholder="confirm password"
-                  label="Confirm Password"
                   type="password"
                 />
               </Box>
