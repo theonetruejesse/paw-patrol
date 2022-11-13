@@ -2,7 +2,7 @@ const sdk = require("api")("@verbwire/v1.0#1xnglab5r6l9");
 import "dotenv-safe/config";
 const path = `${process.env.FILE_PATH}/data/starting.json`;
 
-sdk.auth(process.env.VW_Key);
+sdk.auth(process.env.VW_KEY);
 
 const createStartData = (location: number[], time: string) => {
   const fs = require("fs");

@@ -1,6 +1,8 @@
 import express from "express";
 import cors from "cors";
 import { createToken } from "./queries/verbwire";
+import { getCloseAccounts } from "./queries/firebase";
+import { sendMessages } from "./queries/twilio";
 import "dotenv-safe/config";
 
 async function main() {
@@ -13,8 +15,20 @@ async function main() {
     })
   );
 
-  app.get("/test", async (_, res) => {
-    res.send("testies");
+  sendMessages(["9254873772"]);
+
+  app.get("/test", async (req, res) => {
+    const lon = req.query.lon;
+    const lat = req.query.lat;
+
+    if (!lon || !lat) res.send("bad query params given");
+
+    const location: number[] = [
+      parseFloat(lon as string),
+      parseFloat(lat as string),
+    ];
+
+    res.send(await getCloseAccounts(location));
   });
 
   app.get("/mint", async (req, res) => {
@@ -33,12 +47,14 @@ async function main() {
     res.send(await createToken(location, time as string, username));
   });
 
-  // app.post()
-
   app.get("/getInstances", async (req, res) => {
     // if (req.query.location) // long lat
     res.send("bad query params given");
-  });
+  }); // todo
+
+  // app.get("/getClose", async (req, res) => {
+
+  // });
 
   app.listen(process.env.PORT, () => {
     console.log("\nlistening to port:", process.env.PORT);
