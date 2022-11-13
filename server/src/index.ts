@@ -1,5 +1,6 @@
-import cors from "cors";
 import express from "express";
+import cors from "cors";
+import { getToken } from "./queries/verbwire";
 import "dotenv-safe/config";
 
 async function main() {
@@ -12,8 +13,16 @@ async function main() {
     })
   );
 
-  app.get("/data", async (_, res) => {
+  app.get("/test", async (_, res) => {
     res.send("testies");
+  });
+
+  app.get("/mint", async (req, res) => {
+    if (!req.query.time || !req.query.location) {
+      res.send("bad query params given");
+    } else {
+      res.send(await getToken());
+    }
   });
 
   app.listen(process.env.PORT, () => {

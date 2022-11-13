@@ -27,7 +27,6 @@ export function AuthProvider({ children }) {
   }
 
   async function getUser(email) {
-    console.log("yopoo");
     db.collection("users")
       .where("email", "==", email)
       .get()

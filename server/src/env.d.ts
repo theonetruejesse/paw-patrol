@@ -3,6 +3,7 @@ declare global {
     interface ProcessEnv {
       CORS_ORIGIN: string;
       PORT: string;
+      VW_Key: string;
     }
   }
 }

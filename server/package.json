@@ -17,6 +17,7 @@
   "keywords": [],
   "author": "",
   "dependencies": {
+    "api": "^5.0.1",
     "cors": "^2.8.5",
     "dotenv-safe": "^8.2.0",
     "express": "^4.18.2"
