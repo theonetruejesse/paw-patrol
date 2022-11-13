@@ -1,37 +1,34 @@
-import React from "react";
+import React, { useState } from 'react';
 import { useAuth } from "../contexts/AuthContext";
+import { Wrapper } from '../components/Wrapper';
+import { Image, Box} from '@chakra-ui/react'
+import { IconButton } from '@chakra-ui/react'
+import { Icon, createIcon } from '@chakra-ui/react'
 import {Routes, Route, useNavigate, Link} from 'react-router-dom';
 
 
 const Home = () => {
-
   const reportButton = () => {
-
+    // fetch here
   }
 
-  const { currentUserId } = useAuth();
-  return(
-    <div>
-    <Link to="/cases">Cases</Link>    
-    <div
-    style={{
-      display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-    }}>
-    <button style={{
-      padding: "20%",
-      height: "300%",
-      weight: "300%",
-      backgroundColor: "orange",
-      color: "red",
-      fontSize: "75px",
-      fontWeight: "bold",
-      borderRadius: "50%"}}
-      onClick={reportButton}>REPORT</button>
-    </div>
+  const { currentUser, currentUserId } = useAuth();
 
-    </div>)
+  return(
+    <Wrapper variant="small">
+    <div>
+    <Link to="/cases">
+    <Box boxSize='sm'>
+      <Image src='https://bafkreicxzo3tv7csquxedpax7y4djdcowqnvc6dymvkx757bsdpchjpvea.ipfs.dweb.link' alt=''/>
+    </Box>      
+    </Link>    
+    
+    <Link to="/report-form" >
+    <Box boxSize='sm'>
+      <Image src='https://cdn-icons-png.flaticon.com/512/1255/1255893.png' alt='' />
+    </Box></Link>
+
+    </div></Wrapper>)
 
 };
 export default Home;

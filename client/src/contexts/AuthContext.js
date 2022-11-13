@@ -1,6 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { auth, db } from "../firebase";
-import firebase from "firebase";
+// import firebase from "firebase";
 
 const AuthContext = React.createContext();
 
@@ -16,18 +16,14 @@ export function AuthProvider({ children }) {
     return auth.createUserWithEmailAndPassword(email, password);
   }
 
-  async function createUser(username) {
-    db.collection("users")
-      .add({
-        bio: "filler",
-        username,
-        created_at: firebase.firestore.Timestamp.fromDate(new Date()),
-      })
+  async function createUser(profile) {
+    db.collection("people")
+      .add(profile)
       .then((docRef) => setCurrentUserId(docRef.id));
   }
 
   async function getUser(email) {
-    db.collection("users")
+    db.collection("people")
       .where("email", "==", email)
       .get()
       .then((querySnapshot) => {

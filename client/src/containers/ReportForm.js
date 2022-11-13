@@ -1,12 +1,17 @@
 import { Wrapper } from "../components/Wrapper";
 import { Box, Button, Link, Heading } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
+import { useAuth } from "../contexts/AuthContext";
 import { InputField } from "../components/InputField";
+import { collection, doc, setDoc } from "firebase/firestore"; 
+import { db } from "../firebase";
 
 const ReportForm = () => {
   const submitForm = () => {
-
+    
   }
+
+  const { currentUser, currentUserId } = useAuth();
 
   return (
     <Wrapper variant="small">

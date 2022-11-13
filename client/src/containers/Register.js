@@ -1,5 +1,5 @@
 import { Wrapper } from "../components/Wrapper";
-import { Box, Button, Link, Heading } from "@chakra-ui/react";
+import { Box, Button, Link, Heading, position, Checkbox, CheckboxGroup } from "@chakra-ui/react";
 import { Formik, Form } from "formik";
 import { InputField } from "../components/InputField";
 import { useHistory, Link as ReactLink } from "react-router-dom";
@@ -9,6 +9,14 @@ function Register() {
   const { signup, createUser } = useAuth();
   const history = useHistory();
 
+  const profile = {
+    address: [],
+    camera: false,
+    email: "",
+    name: "",
+    phone: ""
+  }
+
   return (
     <Wrapper variant="small">
       <Heading p={3}>Create an Account</Heading>
@@ -17,16 +25,27 @@ function Register() {
           initialValues={{
             username: "",
             email: "",
+            name: "",
+            phone: "",
             password: "",
-          }}
+            camera: false
+          }} // bruh
           onSubmit={async (values, { setErrors }) => {
-            // todo -> get geolocation here
+
+            navigator.geolocation.getCurrentPosition((position) => {
+              profile.address = [position.coords.longitude, position.coords.latitude];
+            });
+            // profile.camera = values.camera;
+            profile.email = values.email;
+            profile.name = values.name;
+            profile.phone = values.phone;
+
             try {
-              // todo -> change function to json object needed for people collections in db
-              await createUser(values.username);
+              await createUser(profile);
               await signup(values.email, values.password);
               history.push("/");
-            } catch {
+            } catch (e) {
+              console.log(e);
               setErrors("Failed to create an account");
             }
           }}
@@ -36,6 +55,8 @@ function Register() {
               <InputField name="email" placeholder="email" label="Email" />
               <Box mt={3}>
                 <InputField name="phone" placeholder="phone" label="Phone" />
+                <InputField name="name" placeholder="name" label="Name" />
+                {/* <Checkbox name="camera" label="camera">Own a Camera?</Checkbox> */}
               </Box>
               <Box mt={3}>
                 <InputField
