@@ -16,8 +16,7 @@ export default function Vid(props) {
   // const [urlString, setUrlString] = useState("");
   // console.log("bruh: " + urlString);
 
-  const urlString =
-    "https://bafybeids7vlenkwijfgk7e5ezxlitse3tvj5weah4723pqwbmw6pzf6kfu.ipfs.dweb.link/";
+  const urlString = `https://${props.match.params.id}.ipfs.dweb.link/`;
 
   useEffect(() => {}, [urlString]);
   const {
@@ -51,7 +50,7 @@ export default function Vid(props) {
                 }}
                 size="lg"
                 fontSize="2xl"
-                onClick={() => history.push("/")}
+                onClick={() => history.push("/cases")}
               >
                 Not Helpful
               </Button>

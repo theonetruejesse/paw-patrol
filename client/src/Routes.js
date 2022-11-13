@@ -17,7 +17,7 @@ export default function Routes() {
       <Route exact path="/home" render={() => <Home />} />
       <Route exact path="/report-form" render={() => <ReportForm />} />
       <Route exact path="/cases" render={() => <Cases />} />
-      <Route exact path="/vid" render={() => <Vid />} />
+      <PrivateRoute exact path="/vid/:id" component={Vid} />
     </Switch>
   );
 }

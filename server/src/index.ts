@@ -48,7 +48,7 @@ async function main() {
     const phone = req.query.phone as string;
     const link = req.query.link as string;
     // sendMessage(phone, seeIncident);
-    sendMessage(phone, hasCam(link));
+    sendMessage(phone, hasCam(req.query.link as string));
 
     res.send("check-ka-check");
   });
