@@ -18,12 +18,13 @@ function Register() {
             username: "",
             email: "",
             password: "",
-          }} // bruh
+          }}
           onSubmit={async (values, { setErrors }) => {
+            // todo -> get geolocation here
             try {
-              // await createUser(values.username);
+              // todo -> change function to json object needed for people collections in db
+              await createUser(values.username);
               await signup(values.email, values.password);
-              // todo -> add username
               history.push("/");
             } catch {
               setErrors("Failed to create an account");
