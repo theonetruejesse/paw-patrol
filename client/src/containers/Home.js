@@ -1,8 +1,6 @@
 import React from "react";
 import { useAuth } from "../contexts/AuthContext";
 import {Routes, Route, useNavigate, Link} from 'react-router-dom';
-import { Button, ButtonGroup } from '@chakra-ui/react'
-
 
 
 const Home = () => {
@@ -22,12 +20,12 @@ const Home = () => {
         alignItems: 'center',
     }}>
     <button style={{
-      padding: "5px",
-      display:"block",
+      padding: "300px",
       height: "300px",
       weight: "300px",
       backgroundColor: "orange",
-      borderRadius: "50%"}}>Report</button>
+      borderRadius: "50%"}}
+      onClick={reportButton}>Report</button>
     </div>
 
     </div>)
