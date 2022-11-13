@@ -1,5 +1,4 @@
 import * as React from 'react';
-import db from '../firebase'
 import { Wrapper } from "../components/Wrapper";
 import { useAuth } from "../contexts/AuthContext";
 import {
@@ -13,30 +12,8 @@ import {
   Box,
 } from '@chakra-ui/react'
 
-
-
-const accordianProto = (
-<AccordionItem>
-    <h2>
-      <AccordionButton>
-        <Box flex='1' textAlign='left'>
-          Section title
-        </Box>
-        <AccordionIcon />
-      </AccordionButton>
-    </h2>
-    <AccordionPanel pb={4}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.
-    </AccordionPanel>
-  </AccordionItem>
-)
-
 const Cases = () => {
   const { currentUser, currentUserId } = useAuth();
-  
   
   return (
     <Wrapper variant='small'>
@@ -46,16 +23,14 @@ const Cases = () => {
     <h2>
       <AccordionButton>
         <Box flex='1' textAlign='left'>
-          Section title
+          Token 1
         </Box>
         <AccordionIcon />
       </AccordionButton>
     </h2>
     <AccordionPanel pb={4}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.
+    <video width="320" height="240" controls src='https://bafybeiadexhbk76mb6lg42agybypyifwfkeo6klatuetaemoxpvg4vnfom.ipfs.dweb.link' />
+
     </AccordionPanel>
   </AccordionItem>
 
@@ -63,16 +38,69 @@ const Cases = () => {
     <h2>
       <AccordionButton>
         <Box flex='1' textAlign='left'>
-          Section title
+          Token 2
         </Box>
         <AccordionIcon />
       </AccordionButton>
     </h2>
     <AccordionPanel pb={4}>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.
+    <video width="320" height="240" controls src='https://dweb.link/ipfs/bafybeia7rr4efh5zdwgea7zkmpuwimdahwgqvysdwx4y2pd3ttx42ikbv4' />
+    </AccordionPanel>
+  </AccordionItem>
+
+  <AccordionItem>
+    <h2>
+      <AccordionButton>
+        <Box flex='1' textAlign='left'>
+          Token 3
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={4}>
+    <video width="320" height="240" controls src='https://dweb.link/ipfs/bafybeifq2n52rmylinbtmb55dbdvakifcaxmrxqf6of5axas2laypcgs4q' />
+    </AccordionPanel>
+  </AccordionItem>
+
+  <AccordionItem>
+    <h2>
+      <AccordionButton>
+        <Box flex='1' textAlign='left'>
+          Token 4
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={4}>
+    <video width="320" height="240" controls src='https://dweb.link/ipfs/bafkreiafkrwjtchzxrxfrin2o47oop3nl7rjkcd5cmafujl4vp6imhpwqa' />
+    </AccordionPanel>
+  </AccordionItem>
+
+  <AccordionItem>
+    <h2>
+      <AccordionButton>
+        <Box flex='1' textAlign='left'>
+          Token 5
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={4}>
+    <video width="320" height="240" controls src='https://dweb.link/ipfs/bafybeiakfqq4kmmb22hex5h4wvqu6imjhrvch25v6kwbezmgbypmzyinve' />
+    </AccordionPanel>
+  </AccordionItem>
+
+  <AccordionItem>
+    <h2>
+      <AccordionButton>
+        <Box flex='1' textAlign='left'>
+          Token 6
+        </Box>
+        <AccordionIcon />
+      </AccordionButton>
+    </h2>
+    <AccordionPanel pb={4}>
+    <video width="320" height="240" controls src='https://dweb.link/ipfs/bafkreihuhk6sm5fxnicdocysbbty7wiocevz7qfjbesuodk3dk7id4gwtq' />
     </AccordionPanel>
   </AccordionItem>
       </Accordion>

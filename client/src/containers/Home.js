@@ -2,9 +2,7 @@ import React, { useState } from 'react';
 import { useAuth } from "../contexts/AuthContext";
 import { Wrapper } from '../components/Wrapper';
 import { Image, Box} from '@chakra-ui/react'
-import { IconButton } from '@chakra-ui/react'
-import { Icon, createIcon } from '@chakra-ui/react'
-import {Routes, Route, useNavigate, Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 
 const Home = () => {
@@ -25,7 +23,7 @@ const Home = () => {
     
     <Link to="/report-form" >
     <Box boxSize='sm'>
-      <Image src='https://cdn-icons-png.flaticon.com/512/1255/1255893.png' alt='' />
+      <Image src='https://bafkreigspuyyxch6nfka5vswxhkdaywp37osp2be4lf5yvyyfxyobdscoe.ipfs.dweb.link' alt='' />
     </Box></Link>
 
     </div></Wrapper>)
