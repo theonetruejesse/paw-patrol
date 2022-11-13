@@ -3,13 +3,25 @@ const accountSid = process.env.TWILIO_SID;
 const authToken = process.env.TWILIO_TOKEN;
 const client = require("twilio")(accountSid, authToken);
 
-export const sendMessages = (numbers: string[]) => {
-  numbers.forEach((num) => {
-    client.messages.create({
-      body: "\nThis is the ship that made the Kessel Run in fourteen parsecs?",
+// export const sendMessages = (numbers: string[], message: string) => {
+//   numbers.forEach((num) => {
+//     console.log(num);
+//       client.messages.create({
+//         body: `\n${message}`,
+//         from: process.env.TWILIO_NUMBER,
+//         to: num,
+//       });
+//     }
+//   });
+//   console.log("sent");
+// };
+
+export const sendMessage = (num: string, message: string) => {
+  client.messages
+    .create({
+      body: `\n${message}`,
       from: process.env.TWILIO_NUMBER,
       to: num,
-    });
-  });
-  console.log("done");
+    })
+    .catch((e: Error) => console.log(e));
 };

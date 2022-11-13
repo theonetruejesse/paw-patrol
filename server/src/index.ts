@@ -1,9 +1,10 @@
 import express from "express";
 import cors from "cors";
 import { createToken } from "./queries/verbwire";
-import { getCloseAccounts } from "./queries/firebase";
-import { sendMessages } from "./queries/twilio";
+import { notifyAllUsers } from "./utils/notifyAllUsers";
 import "dotenv-safe/config";
+import { sendMessage } from "./queries/twilio";
+import { messages } from "./utils/messages";
 
 async function main() {
   const app = express();
@@ -15,20 +16,9 @@ async function main() {
     })
   );
 
-  sendMessages(["9254873772"]);
-
   app.get("/test", async (req, res) => {
-    const lon = req.query.lon;
-    const lat = req.query.lat;
-
-    if (!lon || !lat) res.send("bad query params given");
-
-    const location: number[] = [
-      parseFloat(lon as string),
-      parseFloat(lat as string),
-    ];
-
-    res.send(await getCloseAccounts(location));
+    await notifyAllUsers();
+    res.send("check yall's phone");
   });
 
   app.get("/mint", async (req, res) => {
@@ -43,6 +33,8 @@ async function main() {
       parseFloat(lon as string),
       parseFloat(lat as string),
     ];
+
+    notifyAllUsers();
 
     res.send(await createToken(location, time as string, username));
   });
