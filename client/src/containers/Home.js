@@ -20,12 +20,15 @@ const Home = () => {
         alignItems: 'center',
     }}>
     <button style={{
-      padding: "300px",
-      height: "300px",
-      weight: "300px",
+      padding: "20%",
+      height: "300%",
+      weight: "300%",
       backgroundColor: "orange",
+      color: "red",
+      fontSize: "75px",
+      fontWeight: "bold",
       borderRadius: "50%"}}
-      onClick={reportButton}>Report</button>
+      onClick={reportButton}>REPORT</button>
     </div>
 
     </div>)
