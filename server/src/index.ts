@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-import { getToken } from "./queries/verbwire";
+import { createToken } from "./queries/verbwire";
 import "dotenv-safe/config";
 
 async function main() {
@@ -18,12 +18,22 @@ async function main() {
   });
 
   app.get("/mint", async (req, res) => {
-    if (!req.query.time || !req.query.location)
-      // long lat
-      res.send("bad query params given");
+    const lon = req.query.lon;
+    const lat = req.query.lat;
+    const time = req.query.time;
+    const username = "would-be-email";
 
-    res.send(await getToken());
+    if (!time || !lon || !lat) res.send("bad query params given");
+
+    const location: number[] = [
+      parseFloat(lon as string),
+      parseFloat(lat as string),
+    ];
+
+    res.send(await createToken(location, time as string, username));
   });
+
+  // app.post()
 
   app.get("/getInstances", async (req, res) => {
     // if (req.query.location) // long lat
