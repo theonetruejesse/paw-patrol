@@ -4,7 +4,7 @@ import { createToken } from "./queries/verbwire";
 import { notifyAllUsers } from "./utils/notifyAllUsers";
 import "dotenv-safe/config";
 import { sendMessage } from "./queries/twilio";
-import { messages } from "./utils/messages";
+import { hasCam, messages, seeIncident } from "./utils/messages";
 
 async function main() {
   const app = express();
@@ -25,7 +25,7 @@ async function main() {
     const lon = req.query.lon;
     const lat = req.query.lat;
     const time = req.query.time;
-    const username = "would-be-email";
+    const username = "bruh?";
 
     if (!time || !lon || !lat) res.send("bad query params given");
 
@@ -39,14 +39,18 @@ async function main() {
     res.send(await createToken(location, time as string, username));
   });
 
-  app.get("/getInstances", async (req, res) => {
-    // if (req.query.location) // long lat
-    res.send("bad query params given");
-  }); // todo
+  // app.get("/getInstances", async (req, res) => {
+  //   // if (req.query.location) // long lat
+  //   res.send("bad query params given");
+  // }); // todo
 
-  // app.get("/getClose", async (req, res) => {
+  app.get("/getHomeLink", async (req, res) => {
+    const phone = req.query.phone as string;
+    // sendMessage(phone, seeIncident);
+    sendMessage(phone, hasCam(req.query.link as string));
 
-  // });
+    res.send("check-ka-check");
+  });
 
   app.listen(process.env.PORT, () => {
     console.log("\nlistening to port:", process.env.PORT);

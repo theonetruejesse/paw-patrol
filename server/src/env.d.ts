@@ -8,6 +8,7 @@ declare global {
       TWILIO_SID: string;
       TWILIO_TOKEN: string;
       TWILIO_NUMBER: string;
+      IPFS_LINK: string;
     }
   }
 }
