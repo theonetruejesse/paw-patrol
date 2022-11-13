@@ -46,9 +46,10 @@ async function main() {
 
   app.get("/getHomeLink", async (req, res) => {
     const phone = req.query.phone as string;
-    const link = req.query.link as string;
     // sendMessage(phone, seeIncident);
-    sendMessage(phone, hasCam(req.query.link as string));
+    console.log(req.query)
+    console.log("here")
+    sendMessage(phone, hasCam(req.query.id as string));
 
     res.send("check-ka-check");
   });

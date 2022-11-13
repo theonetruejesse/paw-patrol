@@ -11,13 +11,14 @@ import Vid from "./containers/Vid";
 export default function Routes() {
   return (
     <Switch>
-      <PrivateRoute exact path="/" component={Home} />
+
       <Route exact path="/login" render={() => <Login />} />
       <Route exact path="/register" render={() => <Register />} />
       <Route exact path="/home" render={() => <Home />} />
       <Route exact path="/report-form" render={() => <ReportForm />} />
       <Route exact path="/cases" render={() => <Cases />} />
       <PrivateRoute exact path="/vid/:id" component={Vid} />
+      <PrivateRoute exact path="/" component={Home} />
     </Switch>
   );
 }

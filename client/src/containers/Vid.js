@@ -60,7 +60,8 @@ export default function Vid(props) {
                 colorScheme="red"
                 size="lg"
                 fontSize="2xl"
-                onClick={onNotifyAuthoritiesOpen}
+                // onClick={onNotifyAuthoritiesOpen}
+                onClick={() => history.push("/cases")}
               >
                 Add to Token
               </Button>

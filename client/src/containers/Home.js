@@ -3,6 +3,7 @@ import { useAuth } from "../contexts/AuthContext";
 import { Wrapper } from '../components/Wrapper';
 import { Image, Box} from '@chakra-ui/react'
 import {Link} from 'react-router-dom';
+import { createToken } from '../queries/createToken';
 
 
 const Home = () => {
@@ -22,7 +23,7 @@ const Home = () => {
     </Link>    
     
     <Link to="/report-form" >
-    <Box boxSize='sm'>
+    <Box boxSize='sm' onClick={() => createToken()}>
       <Image src='https://bafkreigspuyyxch6nfka5vswxhkdaywp37osp2be4lf5yvyyfxyobdscoe.ipfs.dweb.link' alt='' />
     </Box></Link>
 

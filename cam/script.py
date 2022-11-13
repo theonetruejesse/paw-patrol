@@ -82,8 +82,12 @@ while(True):
         }
 
         response = requests.get('https://api.estuary.tech/collections/f21c4f1b-1790-4c57-9820-17bd1c75bc3b?dir=/Final/', headers=headers3)
-        print(response.text)
-
+        cid = response.json()[0]["cid"]
+        link = "http://localhost:4000/getHomeLink?phone=9259643840&id=" + cid
+        if (cid):
+            print(link)
+            requests.get(link)
+            break
         #Continue loop
         rNum +=1
         result.append(cv2.VideoWriter(f'filename{rNum}.mp4', cv2.VideoWriter_fourcc(*'MP4V'), 10, size))
