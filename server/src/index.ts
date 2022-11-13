@@ -18,11 +18,16 @@ async function main() {
   });
 
   app.get("/mint", async (req, res) => {
-    if (!req.query.time || !req.query.location) {
+    if (!req.query.time || !req.query.location)
+      // long lat
       res.send("bad query params given");
-    } else {
-      res.send(await getToken());
-    }
+
+    res.send(await getToken());
+  });
+
+  app.get("/getInstances", async (req, res) => {
+    // if (req.query.location) // long lat
+    res.send("bad query params given");
   });
 
   app.listen(process.env.PORT, () => {

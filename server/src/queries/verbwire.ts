@@ -1,6 +1,6 @@
 const sdk = require("api")("@verbwire/v1.0#1xnglab5r6l9");
 
-sdk.auth("sk_live_055c27cb-fc0e-4876-9455-981c5f9828b8");
+sdk.auth(process.env.TZ);
 
 export const getToken = async () => {
   return await sdk.getNftDataAttributesforslug({
@@ -11,4 +11,11 @@ export const getToken = async () => {
     sortField: "key",
     sortDirection: "DESC",
   });
+};
+
+export const createToken = () => {
+  sdk
+    .postNftMintQuickmintfrommetadataurl({ accept: "application/json" })
+    .then(({ data }: any) => console.log(data))
+    .catch((err: any) => console.error(err));
 };
