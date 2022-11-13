@@ -15,10 +15,6 @@ import {
 
 
 
-for (let i = 0; i < n; i++) {
-  
-}
-
 const accordianProto = (
 <AccordionItem>
     <h2>

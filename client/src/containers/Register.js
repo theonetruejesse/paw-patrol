@@ -52,10 +52,10 @@ function Register() {
         >
           {({ isSubmitting }) => (
             <Form>
+              <InputField name="name" placeholder="name" label="Name" />
               <InputField name="email" placeholder="email" label="Email" />
               <Box mt={3}>
                 <InputField name="phone" placeholder="phone" label="Phone" />
-                <InputField name="name" placeholder="name" label="Name" />
                 {/* <Checkbox name="camera" label="camera">Own a Camera?</Checkbox> */}
               </Box>
               <Box mt={3}>

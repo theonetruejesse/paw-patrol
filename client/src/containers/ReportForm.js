@@ -22,9 +22,7 @@ const ReportForm = () => {
           onSubmit={submitForm}>
           {({ isSubmitting }) => (
             <Form>
-              <InputField name="Phone Number" placeholder="Phone Number" label="Phone Number" />
-              <InputField name="Description" placeholder="Description" label="Description" />
-              
+               <InputField name="Description" placeholder="Description" label="Description" />
               <Button
                 type="submit"
                 colorScheme="teal"
