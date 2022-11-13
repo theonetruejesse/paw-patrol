@@ -76,13 +76,25 @@ while(True):
         print("Added to Estuary")
         print("Linked with Verbwire token")
 
+        #Get JSON
+        headers3 = {
+            'Authorization': 'Bearer EST02fee50c-68e8-46b2-8839-ccdc677bda04ARY',
+        }
+
+        response = requests.get('https://api.estuary.tech/collections/f21c4f1b-1790-4c57-9820-17bd1c75bc3b?dir=/Final/', headers=headers3)
+        print(response.text)
+
+        #Continue loop
         rNum +=1
         result.append(cv2.VideoWriter(f'filename{rNum}.mp4', cv2.VideoWriter_fourcc(*'MP4V'), 10, size))
         print("The video was successfully saved")
     if (cv2.waitKey(1) & 0xFF == ord('q')):
         break
         
-	
+
+
+
+
 # Closes all the frames
 cv2.destroyAllWindows()
 

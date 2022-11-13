@@ -17,7 +17,7 @@ async function main() {
   );
 
   app.get("/test", async (req, res) => {
-    await notifyAllUsers();
+    // await notifyAllUsers();
     res.send("check yall's phone");
   });
 
@@ -46,8 +46,9 @@ async function main() {
 
   app.get("/getHomeLink", async (req, res) => {
     const phone = req.query.phone as string;
+    const link = req.query.link as string;
     // sendMessage(phone, seeIncident);
-    sendMessage(phone, hasCam(req.query.link as string));
+    sendMessage(phone, hasCam(link));
 
     res.send("check-ka-check");
   });
