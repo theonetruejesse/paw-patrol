@@ -1,5 +1,3 @@
-# PawPatrol-SecurityCams
-
 # Background
 
 
@@ -7,7 +5,7 @@
 
 Generally, we have a social responsibility to uphold our neighborhood's safety from any suspicious activity. However, it could be difficult to intervene in situations where your help doesn’t feel necessary. This is a prime example of the wicked problem: **the bystander effect**. There are many factors that influence whether or not a bystander intervenes in a situation. One factor includes people in a large group, like a neighborhood, being less likely to intervene since they assume someone else would help.**Only 32.5% of crimes occurring in neighborhoods were reported to authorities in 2019.** This low statistic could result from insufficient evidence being presented to law enforcement. So, how do we tackle this issue?
 
-Our goal is to increase the visibility and the amount of evidence for neighborhood incidents that could be useful in investigations. So, we created **PawPatrol.** This platform is a compilation of evidence from multiple households within the vicinity of the targeted suspicious activity. Households who send in evidence, ranging from videos taken on anything that has a camera to security footage from any provider, would be fulfilling their civic duty as being an upstanding “neighbor”, just like a "neighborhood watch".
+Our goal is to increase the visibility and the amount of evidence for neighborhood incidents that could be useful in investigations. So, we created **PawPatrol.** This platform is a compilation of evidence from multiple households within the vicinity of the targeted suspicious activity. Households who send in evidence, ranging from videos taken on anything that has a camera to security footage from any provider, would be fulfilling their civic duty as being an upstanding neighbor, just like a "neighborhood watch".
 
 
 
@@ -18,7 +16,7 @@ Our team was enticed by the difficulty level of solving a wicked problem. Specif
 
 
 
-![Logo](https://bafkreibvsrossxcofcljy4ukhs4hakohcy4jdxallar6u3i4zg5rmp7uny.ipfs.dweb.link/) 
+![Built Around You!](https://dweb.link/ipfs/bafkreief7johlxjr6w3jkdxit2q4tcj6lpqbcvbhjq2xs444do7cvd3kdu) 
 
 
 
@@ -27,11 +25,12 @@ Our team was enticed by the difficulty level of solving a wicked problem. Specif
 
 
 1. Go to our easily accessible [website](https://) and report an incident.
-![Website Landpage](https://bafybeihrs6tq4khyceyqzspo7egnalbgw4wyouoglzoka4mob7g6ia52mm.ipfs.dweb.link/)
+![Website Landpage](https://dweb.link/ipfs/bafkreibal5e5mm733kl4z2dy47xucrt6newdzii2nuulh6xvd4hiqsqwji)
 
 2.  A SMS of an incident token will be sent out to your neighborhood.
 
 3. Motion detection occurs, then another SMS with a link to all reports of an incident will be sent. 
+![Motion Detection](https://dweb.link/ipfs/bafkreiee5carwtbccg5s6rn7h6bd5qit27wl367ermnnazjl2e6vb4lwci)
 
 3. Our Incentive Program motivates your neighbors to upload any evidence if applicable.
 
@@ -87,8 +86,7 @@ We were able to implement VerbWire and Estuary while learning new high-level ter
 We plan to try to flush everything out and hopefully take it to the next level as a team.
 
 
-
-
+# ------------------------
 
 # Security Cam System
  This is a demonstartion for PawPatrol at Hack Princeton. The security cameras detect motion and add the video footage into estuary using filecoing and ipfs 
