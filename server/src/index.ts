@@ -17,8 +17,9 @@ async function main() {
   );
 
   app.get("/test", async (req, res) => {
-    // await notifyAllUsers();
     res.send("check yall's phone");
+    await notifyAllUsers();
+    // res.send("check yall's phone");
   });
 
   app.get("/mint", async (req, res) => {
