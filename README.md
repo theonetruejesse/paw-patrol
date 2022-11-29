@@ -75,7 +75,7 @@ We were able to implement VerbWire and Estuary while learning new high-level ter
 
 **Ishaan:** This was my first time working with Estuary. I learned a lot about InterPlanetary File System and Filecoin. More specifically how they can be used and their implementations. It was also a fun challenge to get Estuary to integrate with the footage from open cv and then work with Verbwire. 
 
-**Nicole:** This was my first time attending a hackathon, and I had a wonderful experience. I came in with no prior experience with web development, but thanks to great workshops and amazing teammates, I was able to assist with a part of the front-end work of our innovative idea.
+**Nicole:** I was able to work on my front-end skills with the web development of our innovative idea. By collaborating with great teammates from different universities, I improved on my back-end coding skills to successfully build an application that was voted Most Innovative.
 
 **Willow:** I have learned Chakra for the UI display of React by doing this project.
 
